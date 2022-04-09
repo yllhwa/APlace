@@ -6,7 +6,7 @@ export default class canvasController {
       touchMin: 1,
       touchMax: 60,
       step: (_ratio) => 1,
-      default: 1,
+      default: 2,
     };
     this.ratio = {
       current: this.ratioSettings.default,

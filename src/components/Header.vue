@@ -2,7 +2,7 @@
 
 <template>
   <header class="bg-gray-300">
-    <div class="container flex flex-row w-full mx-auto py-4">
+    <div class="container flex flex-row items-center w-full mx-auto py-4">
       <div class="px-4">
         <a href="/" class="text-2xl font-bold">APlace</a>
       </div>

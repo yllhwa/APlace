@@ -3,7 +3,9 @@ import Index from "./pages/Index.vue";
 </script>
 
 <template>
-  <Index />
+  <Suspense>
+    <Index />
+  </Suspense>
 </template>
 
 <style>

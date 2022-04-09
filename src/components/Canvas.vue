@@ -3,10 +3,12 @@ import axios from "axios";
 import io from "socket.io-client";
 import Utils from "../utils/utils.js";
 import canvasController from "../utils/canvasController.js";
+import accessController from "../utils/accessController.js";
 import { ref, unref, onMounted } from "@vue/runtime-core";
 
 const props = defineProps({
   drawColor: String,
+  _accessController: accessController,
 });
 
 // 地图大小
@@ -64,6 +66,7 @@ const handleClick = (e) => {
   if (unref(_canvasController).mouse.move) {
     return;
   }
+  if (!unref(props._accessController).requestAccess()) return;
   // 根据缩放获取相对位置
   let position = unref(_canvasController).getEventRelativePosition(e);
   let rect = unref(canvas).getBoundingClientRect();
